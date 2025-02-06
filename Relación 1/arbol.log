@@ -1,0 +1,16 @@
+Estructura de carpetas: C:\download\ 
+Listado de rutas de carpetas
+El número de serie del volumen es CE9B-FD43
+C:\DOWNLOAD
++---driver
+    +---21794_04
+        +---Common
+        +---Manual
+        ¦   +---Driver
+        +---PenWalker
+        +---Windows
+            +---amd64
+            ¦   +---drivers
+            ¦   +---win32
+            +---Win32
+                +---drivers

@@ -5,6 +5,12 @@
 		}
 	],
 	"settings": {
-		"files.encoding": "windows1252"
+		"[bat]": {
+			"files.encoding": "windows1252"
+		},
+		"[shellscript]": {
+			"files.eol": "\n",
+			"files.encoding": "utf8"
+		}
 	}
 }

@@ -10,8 +10,8 @@ if "%~2"=="" (
 )
 
 :: Asignar parametros a variables
-set num1=%1
-set num2=%2
+set /A num1=%1
+set /A num2=%2
 
 :: Comprobar si el divisor es cero
 if %num2%==0 ( 
@@ -19,23 +19,16 @@ if %num2%==0 (
    exit /b
 )
 
-::Escalar la operacion para manejar decimales
-
-set /A resultado=%num1% * 1000 / %num2%
-
-:: Calcular las partes de la division
-
-:: Parte entera
-set entero=%resultado:~0,-3%
-if not defined entero set entero=0
-:: Parte decimal
-set decimales=%resultado:~0,-3%
+:: Calcular las partes entera de la division
+set /A entero=num1 / num2
+:: Calcular las partes decimal de la division
+set /A resto=(num1 %% num2) * 1000 / num2
 
 :: Eliminar ceroS iniciales en la parte decimal
-for /f "tokens=* delims=0" %%a in ("%decimales%") do set decimales=%%a
+for /f "tokens=* delims=0" %%a in ("%resto%") do set resto=%%a
 
 :: Mostrar el resultado
-echo El resultado de dividir %num1% entre %num2% es: %entero%.%decimales%
+echo El resultado de dividir %num1% entre %num2% es: %entero%.%resto%
 endlocal
 
 exit /b
